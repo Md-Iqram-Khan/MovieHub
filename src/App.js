@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/Mainnav";
-import "./app.css";
+import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Container } from "@mui/material";
 import Movie from "./Pages/Movies/Movie";
