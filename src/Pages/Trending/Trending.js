@@ -7,18 +7,21 @@ import "./trending.css";
 const Trending = () => {
   const [content, setContent] = useState([]);
   const [page, setPage] = useState(1);
+  const [numOfPages, setNumOfPages] = useState();
 
   const fetchTrendingMovie = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&{page}=${page}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
     // console.log(data);
     setContent(data.results);
+    setNumOfPages(data.total_pages);
   };
 
   useEffect(() => {
     fetchTrendingMovie();
-  }, [page]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, numOfPages]);
 
   return (
     <div>
@@ -37,7 +40,7 @@ const Trending = () => {
             />
           ))}
       </div>
-      <CustomPagination setPage={setPage} />
+      <CustomPagination setPage={setPage} Pages={numOfPages} />
     </div>
   );
 };

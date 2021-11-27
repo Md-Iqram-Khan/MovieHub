@@ -19,7 +19,7 @@ export default function SimpleBottomNavigation() {
 
   return (
     <BottomNavigation
-      style={{ backgroundColor: "#71DFE7" }}
+      style={{ backgroundColor: "#EAEAEA" }}
       showLabels
       value={value}
       onChange={(event, newValue) => {
@@ -27,22 +27,22 @@ export default function SimpleBottomNavigation() {
       }}
     >
       <BottomNavigationAction
-        style={{ color: "black" }}
+        style={{ color: "black", fontWeight: "bold" }}
         label="Trending"
         icon={<WhatshotIcon />}
       />
       <BottomNavigationAction
-        style={{ color: "black" }}
+        style={{ color: "black", fontWeight: "bold" }}
         label="Movies"
         icon={<MovieFilterIcon />}
       />
       <BottomNavigationAction
-        style={{ color: "black" }}
+        style={{ color: "black", fontWeight: "bold" }}
         label="TV Series"
         icon={<TvIcon />}
       />
       <BottomNavigationAction
-        style={{ color: "black" }}
+        style={{ color: "black", fontWeight: "bold" }}
         label="Search"
         icon={<SearchIcon />}
       />
